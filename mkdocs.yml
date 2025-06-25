@@ -1,6 +1,7 @@
-site_name: PC5132 Website
+site_name: CTF Writeups
 
 # nav:
+#       - Elijah's Sequential CTF: Elijah's Sequential CTF.md
 #     - Neutron Stars:
 #         - Introduction: 1.md
 #         - Neutron Degeneracy Pressure: 2.md
@@ -21,7 +22,7 @@ site_name: PC5132 Website
 #     - Credits: Credits.md
 
 theme:
-    name: "material"
+    name: null
     custom_dir: "material/"
 
     features:
@@ -45,7 +46,7 @@ theme:
         code: Roboto Mono
     favicon: assets/favicon.png
     icon:
-        logo: /fontawesome/solid/shuttle-space
+        logo: profile-picture_
 
     palette:
         - media: "(prefers-color-scheme: dark)"

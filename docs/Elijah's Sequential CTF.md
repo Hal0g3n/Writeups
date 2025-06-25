@@ -8,8 +8,8 @@ date: 26 Jun 2025
 
 # Elijah's Sequential CTF
 by [Hal0g3n](https://github.com/Hal0g3n)
-> I created a fairly easy competitive programming problem to test your algorithm coding skills. Please only use python3, c and cpp. \
-> The remote judge compiles cpp code using g++ -DONLINE_JUDGE -fno-tree-ch -O2 -Wall -std=c++14, c code using gcc -DONLINE_JUDGE -fno-tree-ch -O2 -Wall -std=c99 and runs python3 code using python3.7.8. \
+> I created a fairly easy competitive programming problem to test your algorithm coding skills. Please only use python3, c and cpp. <br>
+> The remote judge compiles cpp code using g++ -DONLINE_JUDGE -fno-tree-ch -O2 -Wall -std=c++14, c code using gcc -DONLINE_JUDGE -fno-tree-ch -O2 -Wall -std=c99 and runs python3 code using python 3.7.8. <br>
 > Good luck and remember to flush your outputs! The rest of the information is in the pdf :)
 > 
 ## Solution
@@ -68,16 +68,17 @@ This was when we realised, it was in a docker and the flag is not here...1 hour 
 ### Competitive Programming 🤓
 Fine... we do it the normal way then 😡
 
-> [!TIP]
-> You can skip this entire section this out by just plugging the problem statement into a LLM of your choice...\
-> I used DeepSeek and it gave the algorithm instantly 😎
+!!! TIP
+    You can skip this entire section this out by just plugging the problem statement into a LLM of your choice...<br>
+    I used DeepSeek and it gave the algorithm instantly 😎
 
 #### Prerequisites: Big-😮 notation
-Time complexity is usually denoted with the big-O notation 😮, meaning bounded growth \
+Time complexity is usually denoted with the big-O notation 😮, meaning bounded growth <br>
 So a simple for loop would be $O(n)$ where $n$ is the number of times the loop runs.
 
 #### Subtask 1: $n < 10^4$ or $O(n^2)$
 Starting off, this seems like a Dynamic Programming (DP) problem. Following the DP intuition 🧠, we define a function
+
 $$
 dp(i) = \text{max sastisfaction solving the $i$-th problem last}
 $$
@@ -85,19 +86,24 @@ $$
 We also define the satisfaction gained as $\Delta[i][j]$, where $i$ is the previous problem and $j$ is the next problem, because I am lazy to keep looking up the values.
 
 This means we can recursivly define our function $dp$ as
+
 $$
 dp(i) = \max_{0 \leq k < j}\{dp(k) + \Delta[a_k][a_i], 0\}
 $$
+
 The idea behind is we try every best sequence of solves ending before $i$ and extending it by solving $i$ after, since solving $i$ either:
+
 1. Extends existing solve sequence: $dp(k)$ max satisfaction is solving `1, 3, 5, 6, ..., k`, then we solve $i$ after that, adding $\Delta[a_k][a_i]$
-2. Starts a new sequence: The satisfaction is $0$
+2. Starts a new sequence: The satisfaction restarts $0$
 
 Now we can calculate $dp(i)$ by looping through every possible $k$, taking at most $O(n)$ time to calculate when $i = n$.
 
 Our answer is the most satisfaction solving any problem last, which is 
+
 $$\max_{i < n}\{dp(i)\}$$
 
 This means looping through every $i$, or looping $n$ times, with each loop taking at most $O(n)$. Our total time is at most
+
 $$
 n \times O(n) = \fbox{$O(n^2)$}
 $$
@@ -129,12 +135,13 @@ dp(i) &= \max_{0 \leq k < j}\{&dp(k) + \Delta[a_k][a_i], 0\} \\
 \end{aligned}
 $$
 
-Defining better variable names for the parts below: \
-$m_i[0] = \max_{0 \leq k < j, a_k = 0}\{dp(k), 0\}$, \
-$m_i[1] = \max_{0 \leq k < j, a_k = 1}\{dp(k), 0\}$, and\
+Defining better variable names for the parts below:  <br>
+$m_i[0] = \max_{0 \leq k < j, a_k = 0}\{dp(k), 0\}$,  <br>
+$m_i[1] = \max_{0 \leq k < j, a_k = 1}\{dp(k), 0\}$, and <br>
 $m_i[2] = \max_{0 \leq k < j, a_k = 2}\{dp(k), 0\}$
 
 we get
+
 $$
 \begin{aligned}
 dp(i) &= \max\{m_i[0] + \Delta[0][a_i], m_i[1] + \Delta[1][a_i], m_i[2] + \Delta[2][a_i], 0\} \\
@@ -142,6 +149,7 @@ dp(i) &= \max\{m_i[0] + \Delta[0][a_i], m_i[1] + \Delta[1][a_i], m_i[2] + \Delta
 $$
 
 This is where we make the important observation:
+
 $$
 \begin{aligned}
 m_{i + 1}[a_i] &= \max\{m_i[a_i], dp(i)\} \\
@@ -152,15 +160,18 @@ $$
 So if we know $dp(i), m_i[0], m_i[1], m_i[2]$, we can calculate $dp(i + 1)$ in O(1) operations.
 
 At $i = 0$, we can calculate that:
+
 $$
 \begin{aligned}
 m_{-1}[a] &= -\infty\ \text{where $a \in \{0, 1, 2\}$}
 dp(0) = 0
 \end{aligned}
 $$
+
 The reason $m_{-1}[a] = -\infty$ is because there is no such sequence. Thus, its satisfaction must be $<0$, i.e. below the satisfaction from solving only $1$ problem.
 
 Now we loop through all $i$ from $1$ to $n - 1$, giving us a total time of 
+
 $$
 O(n) \times O(1) = \fbox{$O(n)$}
 $$
