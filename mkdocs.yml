@@ -1,0 +1,80 @@
+site_name: PC5132 Website
+
+# nav:
+#     - Neutron Stars:
+#         - Introduction: 1.md
+#         - Neutron Degeneracy Pressure: 2.md
+#         - The Origin: 3.md
+#         - The Structure: 4.md
+#     - The Quarkiness: 
+#         - Introduction to Quark Matter: 5_video.md
+#         - What are Quarks?: 5.md
+#     - Stranger Things:
+#         - Introduction to Strange Matter: 6_video.md
+#         - Strange Stranglets?: 6.md
+#     - Appendix: 
+#         - On Degeneracy: 7.md
+#         - The Strong Force: 8.md
+#         - Overcoming Exclusion: 9.md
+#     - Become a Neutron Star: quiz/index.html
+#     - Fin: Conclusion.md
+#     - Credits: Credits.md
+
+theme:
+    name: "material"
+    custom_dir: "material/"
+
+    features:
+        - search.suggest
+        - search.share
+        - navigation.top
+        - navigation.instant
+
+    # 404 page
+    static_templates:
+        - 404.html
+
+    # Necessary for search to work properly
+    include_search_page: false
+    search_index_only: true
+
+    # Default values, taken from mkdocs_theme.yml
+    language: en
+    font:
+        text: Roboto
+        code: Roboto Mono
+    favicon: assets/favicon.png
+    icon:
+        logo: /fontawesome/solid/shuttle-space
+
+    palette:
+        - media: "(prefers-color-scheme: dark)"
+          scheme: slate
+          toggle:
+              icon: material/weather-sunny
+              name: Switch to light mode
+        - media: "(prefers-color-scheme: light)"
+          scheme: default
+          toggle:
+              icon: material/weather-night
+              name: Switch to dark mode
+
+markdown_extensions:
+    - pymdownx.arithmatex:
+        generic: true
+    - pymdownx.superfences
+    - pymdownx.tabbed:
+        alternate_style: true 
+    - admonition
+    - pymdownx.details
+    - pymdownx.superfences
+
+extra_css:
+    - stylesheets/style.css
+    - stylesheets/quiz.css
+    - stylesheets/card.css
+  
+extra_javascript:
+    - javascripts/mathjax.js
+    - https://polyfill.io/v3/polyfill.min.js?features=es6
+    - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
