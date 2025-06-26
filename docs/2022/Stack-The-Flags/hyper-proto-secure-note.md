@@ -1,5 +1,18 @@
+---
+title: Hyper Proto Secure Note
+CTF: Stack The Flags
+Year: 2022
+category: [web]
+author: Hal0g3n
+date: 8 Dec 2022
+
+hide:
+- footer
+- toc
+---
+
 # Hyper Proto Secure Note 1
-by Halogen
+by [Hal0g3n](https://github.com/Hal0g3n)
 > An evil organization has been plotting to pollute the nearby village with its smog engine. Our intelligence team tells us that they have found that the smog engine has an exposed RDP service and they have the username, but not the password. The password is stored in the securenote application that bob uses.
 > 
 > Find a way to steal the password to turn off the smog machine.

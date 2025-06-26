@@ -1,6 +1,7 @@
 ---
 title: Elijah's Sequential CTF
-CTF: Grey Cat The Flag 2025 - Qualifiers
+CTF: Grey Cat The Flag - Qualifiers
+Year: 2025
 category: [misc]
 author: Hal0g3n
 date: 26 Jun 2025

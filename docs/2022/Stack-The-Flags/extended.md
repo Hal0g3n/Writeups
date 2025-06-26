@@ -1,5 +1,18 @@
+---
+title: extended
+CTF: Stack The Flags
+Year: 2022
+category: [web, crypto]
+author: Hal0g3n
+date: 8 Dec 2022
+
+hide:
+- footer
+- toc
+---
+
 # extended
-by Halogen
+by [Hal0g3n](https://github.com/Hal0g3n)
 > Seems like an extensive authentication system
 ## Solution
 When we first open the website, we see a Jaga Authentication (predictable as above). 

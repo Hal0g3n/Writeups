@@ -1,5 +1,18 @@
+---
+title: Blogpost
+CTF: Stack The Flags
+Year: 2022
+category: [web]
+author: Hal0g3n
+date: 8 Dec 2022
+
+hide:
+- footer
+- toc
+---
+
 # Blogpost
-by Halogen
+by [Hal0g3n](https://github.com/Hal0g3n)
 > Jaga created an internal social media platform for the company, can you leak anyone's information?
 ## Solution
 First step, look through the code. This is where we observe `bot.js`, a curious little thing that will be the downfall of Jaga's social media platform. This script basically logs in as admin, sets the flag as a cookie and then visit our blog. How wonderful, sounds like a Cross Site Scripting attack (XSS).

@@ -1,5 +1,18 @@
+---
+title: Tick Tock
+CTF: Stack The Flags
+Year: 2022
+category: [web]
+author: Hal0g3n
+date: 8 Dec 2022
+
+hide:
+- footer
+- toc
+---
+
 # ticktock
-by Halogen
+by [Hal0g3n](https://github.com/Hal0g3n)
 > Looks like you can login without any extra hints. Just remember to keep track of the time you spend on this challenge. Dont get too carried away!
 ## Solution
 This had 0 solves until the admin dropped their insane hint
