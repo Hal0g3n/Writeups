@@ -7,6 +7,7 @@ date: 26 Jun 2025
 
 hide:
 - footer
+- toc
 ---
 
 # Elijah's Sequential CTF
