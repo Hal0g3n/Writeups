@@ -235,7 +235,7 @@ $$
 
 And we can see that for all $n>l$, $3 \uparrow\uparrow n \mod m = 3 \uparrow\uparrow\ l \mod m$.
 
-This is crucial as we can effectively reduce all values to $l$. Calculating it with SAGEMATH (/sɑːɡeɪmæθ/), we get $l = $ under $\mod m - 1$
+This is crucial as we can effectively reduce all values to $l$. Calculating it with SAGEMATH (/sɑːɡeɪmæθ/), we get $l = 113$ under mod $m - 1$
 
 ??? "SageMath Script"
     ```py
@@ -250,7 +250,7 @@ This is crucial as we can effectively reduce all values to $l$. Calculating it w
 ### MAGIC OBSERVATION
 It might seem like we just took a big detour. Yes... I do admit talking a little too much about the details. But we can finally see da wae (I'm old, I know). 
 
-Simplifying our $triple_baka$ crazy hyperoperation to a tetration:
+We just need to see that our $triple\_baka$ crazy hyperoperation is still tetration:
 
 $$
 \begin{aligned}
@@ -262,7 +262,7 @@ triple\_baka(64) &= 3 \uparrow^{(triple\_baka(63))} 3 \\
 \end{aligned}
 $$
 
-Wow, it is just tetration to an impossibly huge number... wait a huge number. That must mean it is larger than $l$! So under $\mod m - 1$, `triple_baka(64)` is just $3 \uparrow\uparrow l \mod m-1$
+Wow, it is  tetration to an impossibly huge number... wait a huge number. That must mean it is larger than $l$! So under mod $m - 1$, `triple_baka(64)` is just $3 \uparrow\uparrow l \mod m-1$
 
 And just like that, we just calculate $(3 \uparrow\ l \mod m-1)$-th $x$ value of the LCG, xor with $ct$ and get the flag 🥳
 
