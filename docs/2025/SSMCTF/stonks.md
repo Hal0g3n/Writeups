@@ -1,5 +1,5 @@
 ---
-title: TripleBaka
+title: stonks
 CTF: SSMCTF
 Year: 2025
 category: [crypto]
