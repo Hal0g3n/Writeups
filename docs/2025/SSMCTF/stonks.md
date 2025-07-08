@@ -95,7 +95,7 @@ q&0&0&0 &&\\
 \right)
 $$
 
-Let us define each row as $\braket{\vec{v_i}\ |\ i\in[0, 1, 2, \cdots, d+4]}$.
+Let us define each row as $\langle\vec{v_i}\ |\ i\in[0, 1, 2, \cdots, d+4]\rangle$.
 From the modular linear equations we got, we know that the first 4 columns must follow this equation:
 
 $$
