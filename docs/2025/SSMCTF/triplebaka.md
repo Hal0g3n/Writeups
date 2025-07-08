@@ -11,7 +11,7 @@ hide:
 - toc
 ---
 
-# idk
+# triplebaka
 by [Hal0g3n](https://github.com/Hal0g3n)
 > more like baka ↑↑↑↑ baka ↑↑↑↑ baka...
 

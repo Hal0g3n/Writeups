@@ -1,0 +1,20 @@
+/* Remove scrollbars from MathJax blocks */
+mjx-container {
+  overflow-x: auto;
+  overflow-y: hidden;
+  max-width: 100%;
+}
+
+/* For display equations in block containers */
+mjx-container[jax="SVG"] {
+  display: block;
+  overflow-x: auto;
+  overflow-y: hidden;
+  width: fit-content;
+  max-width: 100%;
+}
+
+/* Optional: make inline math fit better */
+.math.inline {
+  white-space: nowrap;
+}
